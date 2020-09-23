@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>File upload test form</TITLE>
+</HEAD>
+<BODY>
+<FORM ACTION="upload.asp" METHOD="Post" ENCTYPE="multipart/form-data" NAME="Form1" onSubmit="return OnFilesSubmitted()">
+  <P>
+    <INPUT NAME="File1" TYPE="File">
+    <BR>
+  </P>
+  <P>
+	<INPUT NAME="name" TYPE="Text">
+  </P>
+			<BR>
+	<INPUT NAME="Submit1" TYPE="Submit">
+  </P>
+</FORM>
+<form>
+
+</form>
+<DIV ALIGN="CENTER">
+	<FONT COLOR="a90000" SIZE="5" FACE="verdana"><MARQUEE><P ID="MyID"></P></MARQUEE></FONT>
+	<BR><IMG NAME="imgPross" BORDER="0" SRC="images/WhitePixel.gif" WIDTH="123" HEIGHT="16">
+</DIV>
+
+<P>
+  <SCRIPT>
+	function OnFilesSubmitted()
+	{
+	    document.all("MyID").innerHTML = "<BR>Files are uploading... Please wait...";
+
+		document.all.imgPross.src = imgPreload.src;
+		document.all.Submit1.disabled = true;
+    	return true;
+	}
+
+	var imgPreload = new Image(); //Preload image
+	imgPreload.src = "images/processing.gif";
+  </SCRIPT>
+  <B>How to integrate the UploadRequest Class into an existing project in three easy
+steps:</B></P>
+<P><B>1) Add the following
+  value to the FORM tag:</B><BR>
+  ENCTYPE=<FONT COLOR="#0000FF">&quot;multipart/form-data&quot;</FONT></P>
+<P><B>2) Add the following to the ASP file that the form is posting to (ACTION):</B><BR>
+  <FONT COLOR="#0000FF">Dim</FONT>
+objUploadRequest :
+<FONT COLOR="#0000FF">Set</FONT> objUploadRequest = New UploadRequest</P>
+<P><FONT COLOR="#999999">'Initialize and configure </FONT><BR>
+  <FONT COLOR="#0000FF">With</FONT> objUploadRequest<BR>
+  .UploadLimit = 1000000 <FONT COLOR="#999999">'File size limit in Bytes</FONT><BR>
+  .UploadFolder = <FONT COLOR="#00FF00">&quot;Uploaded/&quot;</FONT><BR>
+  .AllowedExtensions = <FONT COLOR="#00FF00">&quot;jpg gif&quot;</FONT> <FONT COLOR="#999999">'Very important to avoid hijacking,
+  otherwise an executable file could be uploaded</FONT><BR>
+  .Verbose = 1 <FONT COLOR="#999999">'Display info about uploaded file(s): 0 = No / 1 = Yes</FONT><BR>
+  .RandomName = 0 <FONT COLOR="#999999">'Generate a unique name for uploaded file, extension is kept:
+  0 = No / 1 = Yes</FONT><BR>
+  .UploadPrefix = ""					<FONT COLOR="#999999">'Prefix for value names of uploaded
+  files, example: "Uploaded/"</FONT><BR>
+<FONT COLOR="#0000FF">End With</FONT></P>
+<P><FONT COLOR="#999999">'Process upload request (save files and store POST variables)</FONT><BR>
+<FONT COLOR="#0000FF">Call</FONT> objUploadRequest.Process()</P>
+<P><FONT COLOR="#999999">'[FURTHER PAGE PROCESSING GOES HERE]</FONT></P>
+<P><FONT COLOR="#999999">'Clean up</FONT><BR>
+  <FONT COLOR="#0000FF">Set</FONT> objUploadRequest = <FONT COLOR="#0000FF">Nothing</FONT></P>
+<P><B>3) After uploading a file, you cannot access the &quot;Request&quot; object in order
+  to process POST variables anymore, so to avoid affecting the existing functionality
+of your page do the following:</B><BR>
+Replace <FONT COLOR="#FF0000">&quot;Request(&quot;</FONT> or/and <FONT COLOR="#FF0000">&quot;Request.Form(&quot;</FONT> with <FONT COLOR="#0000FF">&quot;objUploadRequest.GetValue(&quot;</FONT><BR>
+</P>
+</BODY>
+</HTML>
