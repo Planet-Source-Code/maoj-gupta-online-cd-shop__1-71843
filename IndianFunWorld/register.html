@@ -1,0 +1,166 @@
+<html>
+<head>
+<title>IndianFunWorld</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<SCRIPT language=Javascript>
+      <!--
+      function isNumberKey(evt)
+      {
+         var charCode = (evt.which) ? evt.which : event.keyCode
+         if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+
+         return true;
+      }
+      function isChar(evt)
+      {
+         var charCode = (evt.which) ? evt.which : event.keyCode
+         if ((charCode > 0 && charCode < 65 && charCode!=8 && charCode!=32) || (charCode > 90 && charCode < 97) || charCode > 122)
+             return false;
+            
+         return true;
+      }
+      
+       function isSpace(evt)
+      {
+         var charCode = (evt.which) ? evt.which : event.keyCode
+         if (charCode == 32)
+            return false;
+
+         return true;
+      }
+      //-->
+   </SCRIPT>
+   <!--[if gte IE 5.5]>
+<script language="JavaScript" src="ie.js" type="text/JavaScript"></script>
+<![endif]-->
+</head>
+<body>
+<div id="header">
+      <img src="Images/banner.gif" width="1010" height="140" alt="" /></div>
+      <!-- end header -->
+
+<div id="wrapper">
+      <dl id="browse">
+      <ul id="navmenu">
+  <li><a href="indexmain.asp">Home</a></li>
+  <li><a href="register.html">Category +</a>
+    <ul>
+      <li><a href="register.html">CD+</a>
+        <ul>
+          <li><a href="cd_movie.asp">Movie</a></li>
+          <li><a href="cd_app.asp">Application</a></li>
+          <li><a href="cd_game.asp">Games</a></li>
+          <li><a href="cd_music.asp">Music</a></li>
+        </ul>
+      </li>
+      <li><a href="register.html">DVD+</a>
+        <ul>
+          <li><a href="dvd_movie.asp">Movie</a></li>
+          <li><a href="dvd_app.asp">Application</a></li>
+          <li><a href="dvd_game.asp">Games</a></li>
+          <li><a href="dvd_music.asp">Music</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="feedback.html">FeedBack!!!</a></li>
+        
+  <li><a href="Aboutus.html">About Us</a></li>
+  <li><a href="Contact.html">Contact Us</a></li>
+</ul>
+</dl>
+<div id="inner">
+    <div id="body">
+      <div class="inner">
+<form method=post action=signup.asp>
+<table cellspacing=10 >
+<tr><td><strong>Name:-</strong></td>
+<td><Input type=Text name=name maxlength=15 onkeypress="return isChar(event)"></td></tr>
+
+<tr>
+<td><strong>Username:-</strong></td>
+<td><Input type=Text name=uname maxlength=15 onkeypress="return isSpace(event)"></td></tr>
+<tr><td></td><td><font color="#6f6f6f" size="-1" face="Arial, sans-serif"><strong>Example:manojmc2,raj_india etc.</strong></font></td></tr>
+<tr></tr>
+
+<tr>
+<td><strong>Password:-</strong></td>
+<td><input type=Password name=pass maxlength=15></td></tr>
+<tr><td></td><td><font color="#6f6f6f" size="-1" face="Arial, sans-serif"><strong>Minimum of 6 characters in length.</strong></font></td></tr>
+
+<tr>
+<td><strong>Re-Type Password:-</strong></td>
+<td><input type=Password name=repass maxlength=15></td>
+</tr>
+
+<tr>
+<td><strong>Address:</strong></td>
+<td><textarea cols=20 rows=5 name=address></textarea></td>
+</tr>
+
+<tr>
+<td><strong>Contact Number:</strong></td>
+<td><font size=3>+91</font>&nbsp;<input type=text name=ctno onkeypress="return isNumberKey(event)"></td>
+</tr>
+
+<tr>
+<td><strong>Security Question:-</strong></td>
+<td><select name=question>
+  <option value="What is your Pet name">What is your Pet name</option>
+  <option value="What is your library card number">What is your library card number</option>
+  <option value="What was your first phone number">What was your first phone number</option>
+  <option value="What was your first teacher's name">What was your first teacher's name</option>
+</select></td></tr>
+
+<tr>
+<td><strong>Answer:-</strong></td>
+<td><input type=text name=ans></td></tr>
+
+<tr>
+<td><strong>Email Address:-</strong></td>
+<td><input type=text name=email></td></tr>
+
+<tr>
+<td><strong>State:-</strong></td>
+<td><select name=state>
+<option>Maharastra</option>
+<option>Delhi</option>
+<option>Panjab</option>
+<option>Jammu &amp Kasmir</option>
+<option>Uttar Pradesh</option>
+<option>Bihar</option>
+<option>Madhya Pradesh</option>
+<option>Kalkatta</option>
+<option>Bengal</option>
+<option>Chennai</option>
+<option>Tamilnadu</option>
+<option>Mizoram</option>
+<option>Sikkim</option>
+</select></td>
+</tr>
+<tr><td valign=top><strong>Terms And Condition:-</strong></td>
+<td><textarea rows="5" cols="50" style="width: 100%; text-align: left;" readonly="readonly">
+YOU MUST READ AND AGREE TO THE DISCLAIMER BEFORE REGISTERING TO THIS SITE
+</textarea></td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=Submit value="I Accept Terms and Condition" name=signup>
+</form>
+</div>
+    <!-- end inner -->
+    </div>
+    <!-- end body -->
+    <div class="clear"></div>
+    <div id="footer"> &nbsp;Best View on Mozilla FireFox at 1024X786 resolution.</div>
+    <!-- end footer -->
+    </div>
+  <!-- end inner -->
+</div>
+<!-- end wrapper -->
+
+</body>
+</html>
+
+
